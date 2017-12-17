@@ -43,8 +43,8 @@
 
   #head
     position fixed
-    z-index 9
     top 0
+    z-index 9
     width 100%
     height 87px
     .search

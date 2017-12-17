@@ -1,6 +1,7 @@
 
 import Vue from 'vue'
 import App from './App'
+import router from './router'
 import { Swipe, SwipeItem } from 'mint-ui';
 
 
@@ -13,5 +14,6 @@ Vue.component(SwipeItem.name, SwipeItem);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(App),
+  router,
 });
