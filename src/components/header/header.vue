@@ -79,12 +79,12 @@
               width 100%
               border 0
               height 25px
-              background #e9e9e9
               border-radius 4px
+              background #e9e9e9
               color #bcbcbc
               text-indent 10px
               font-size 13px
-              outline 0
+              outline none
         .search-img
           vertical-align middle
           display inline-block

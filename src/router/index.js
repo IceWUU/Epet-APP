@@ -5,17 +5,19 @@ const home = () => import('../pages/home/home.vue');
 const classification = () => import('../pages/classification/classification.vue');
 const shopping = () => import('../pages/shopping/shopping.vue');
 const center = () => import('../pages/center/center.vue');
+const goods = () => import('../pages/classification-nav/goods.vue');
+const brand = () => import('../pages/classification-nav/brand.vue')
+
 
 
 Vue.use(Router);
 
 export default new Router({
-  linkActiveClass:"active",
+  // linkActiveClass:"active",
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: home
+      'redirect': '/home'
     },
     {
       path: '/home',
@@ -23,7 +25,21 @@ export default new Router({
     },
     {
       path: '/classification',
-      component: classification
+      component: classification,
+      children: [
+        {
+          path: '/classification',
+          'redirect': '/classification/goods'
+        },
+        {
+          path: 'goods',
+          component: goods
+        },
+        {
+          path: 'brand',
+          component: brand
+        }
+      ]
     },
     {
       path: '/shopping',
@@ -32,6 +48,6 @@ export default new Router({
     {
       path: '/center',
       component: center
-    },
+    }
   ]
 })
