@@ -326,24 +326,39 @@
         </ul>
       </li>
     </ul>
-    <div class="brand-all">全部</div>
+    <div class="brand-all" @click="clickShow">全部</div>
+    <div class="all-brand-page" v-show="toShow">
+      <pet-toolHead></pet-toolHead>
+    </div>
   </div>
 </template>
 
 <script>
+  import toolHead from '../shopping/tool-head.vue'
   import BScroll from 'better-scroll'
   export default {
     data() {
-      return {}
+      return {
+        toShow: false
+      }
     },
 
     computed: {},
 
-    methods: {},
+    methods: {
+      clickShow() {
+        this.toShow = !this.toShow;
+
+      }
+    },
     mounted(){
       new BScroll(this.$refs.list, {
+        click: true,
         scrollY: true
       })
+    },
+    components: {
+      'pet-toolHead': toolHead,
     }
   }
 </script>
@@ -354,7 +369,6 @@
     clearFix()
     width 100%
     height 597px
-
     background #f3f4f5
     overflow hidden
     .brand-name
@@ -419,5 +433,12 @@
       text-align center
       color #fff
 
+    .all-brand-page
+      z-index 9999
+      position absolute
+      top 0
+      width 100%
+      height 100%
+      background #fff
 
 </style>

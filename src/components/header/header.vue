@@ -8,7 +8,7 @@
             <input type="search" placeholder="搜索商品和品牌" disabled="disabled">
           </a>
         </p>
-        <a href="#" class="search-img">
+        <a href="#" class="search-img" @click="isShowMsg">
           <img src="../../img/mydope.png">
         </a>
       </div>
@@ -24,17 +24,34 @@
         <li><a href="#">美容香波</a></li>
       </ul>
     </div>
+    <div class="header-msg" v-show="isShow" @click="isShowMsg">
+      <pet-toolHead></pet-toolHead>
+    </div>
   </div>
 </template>
 
 <script>
+  import toolHead from '../../pages/shopping/tool-head.vue'
   import BScroll from 'better-scroll'
   export default {
+    data() {
+      return {
+        isShow: false
+      }
+    },
     mounted(){
       new BScroll(this.$refs.nav, {
         scrollX: true
       })
     },
+    methods: {
+      isShowMsg() {
+        this.isShow = !this.isShow;
+      }
+    },
+    components: {
+      'pet-toolHead': toolHead,
+    }
   }
 </script>
 
@@ -46,7 +63,7 @@
     top 0
     z-index 9
     width 100%
-    height 87px
+    /*height 87px*/
     .search
       width 100%
       height 41px
@@ -126,4 +143,10 @@
             color #666
 
 
+    .header-msg
+      position absolute
+      top 0
+      width 100%
+      height 700px
+      background #f3f4f5
 </style>

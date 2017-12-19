@@ -1,5 +1,5 @@
 import Mock from 'mockjs'
-import data from './data.json'
+import apiData  from './data.json'
 
 
-Mock.mock('/api2/goods', {code: 0, data: data.classifyName})
+Mock.mock('/api2/goods', {code: 0, data:apiData.classifyName})

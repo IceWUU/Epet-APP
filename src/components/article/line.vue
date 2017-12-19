@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="line-page">
     <div class="line"></div>
   </div>
 </template>
@@ -18,7 +18,7 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixin.styl"
-  div
+  .line-page
     clearFix()
     .line
       float left

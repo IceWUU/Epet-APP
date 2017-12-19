@@ -25,7 +25,10 @@
 
     computed: {},
 
-    methods: {},
+    methods: {
+
+    },
+
     components: {
       'pet-carousel': carousel,
       'pet-navigation': navigation,

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="navigation-page">
     <ul class="nav">
       <li><img src="https://img1.epetbar.com/2017-12/13/21/c0372b31b110dcbda589da4cb26f19c5.jpg@!water" alt=""></li>
       <li><img src="https://img1.epetbar.com/2017-12/13/21/b88234ac2e2cf0f2c6c36f5576e1acd3.jpg@!water" alt=""></li>
@@ -28,11 +28,12 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .nav
-    width 100%
-    li
-      width 75px
-      float left
-      img
-        width 100%
+  .navigation-page
+    .nav
+      width 100%
+      li
+        width 75px
+        float left
+        img
+          width 100%
 </style>

@@ -1,79 +1,79 @@
-<tpxplate>
-  <div class="loagin">
-    <div class="header">
+<template>
+  <div id="center-page">
+    <div class="center-header">
       <div class="header-top">
         <span class="arrow"></span>
         <span class="register">注册</span>
       </div>
-      <div class="mlogin">
+      <div class="m-login">
         <img src="./logo.png" alt="">
       </div>
       <div class="tabs">
         <ul>
-          <li  class="login_a">
-            <a href="#login_form" @click="showI">普通登录</a>
+          <li class="login_a">
+            <a href="#" @click="showI">普通登录</a>
             <i v-if="isShowI1"></i>
           </li>
           <li class="login_a">
-            <a href="#newlogin_form" @click="showI">手机动态密码登录</a>
+            <a href="#" @click="showI">手机动态密码登录</a>
             <i  v-if="isShowI2"></i>
           </li>
         </ul>
       </div>
     </div>
     <div class="main">
-      <div class="mformBox">
+      <div class="m-form-box">
         <div id="login_form" v-if="isShowI1" >
           <ul>
-            <li class="clearfix">
-              <span class="nameico"></span>
-              <input type="text" placeholder="手机号/邮箱/用户名" name="username">
+            <li>
+              <span class="name-ico"></span>
+              <input type="text" placeholder="手机号/邮箱/用户名" name="username" class="input-placeholder-color">
             </li>
             <li>
-              <span class="passwordico"></span>
-              <input type="text" placeholder="输入密码" name="password">
+              <span class="password-ico"></span>
+              <input type="text" placeholder="输入密码" name="password" class="input-placeholder-color">
             </li>
           </ul>
         </div>
-        <div id="newlogin_form" v-if="isShowI2">
+        <div id="new-login-form" v-if="isShowI2">
           <ul>
-            <li class="clearfix">
-              <span class="numico"></span>
-              <input type="text" placeholder="已注册的手机号" name="phone">
+            <li>
+              <span class="num-ico"></span>
+              <input type="text" placeholder="已注册的手机号" name="phone" class="input-placeholder-color">
             </li>
             <li>
-              <span class="passwordico"></span>
-              <input type="text" placeholder="请输入图片内容" name="varify">
-              <span class="fr seccode" >
-                  <img src="./seccode.png">
+              <span class="password-ico"></span>
+              <input type="text" placeholder="请输入图片内容" name="varify" class="input-placeholder-color">
+              <span class="fr-sec-code" >
+                  <img src="http://demo.open.renren.io/renren-fast/captcha.jpg">
                 </span>
             </li>
             <li>
-              <span class="passwordico"></span>
-              <input type="text" class="dttext" placeholder="动态密码">
-              <a class="get_phonepass ">获取动态密码</a>
+              <span class="password-ico"></span>
+              <input type="text" class="dttext input-placeholder-color" placeholder="动态密码">
+              <a class="get_phone-pass ">获取动态密码</a>
             </li>
           </ul>
         </div>
       </div>
-      <div class="ftc clearfix" >
+      <div class="ftc" >
         <a href="https://wap.epet.com/login.html?do=findpassword" class="btn-register">忘记密码？</a>
-        <div class="clear"></div>
+        <!--<div class="clear"></div>-->
       </div>
-      <div class="loginbtn">
+      <div class="login-btn">
         <a href="#">登  录</a>
       </div>
       <div class="space"></div>
       <div class="partners">
-        <b>合作网站登录</b>
+        <p>合作网站登录</p>
       </div>
       <div class="other_login">
-        <div class="ZFB">
+        <div class="zfb-btn">
           <a href="#">
             <img src="./login_ico2.png" alt="">
           </a>
         </div>
-        <div class="QQ">
+        <div class="qq-btn">
           <a href="#">
             <img src="./login_ico4.png" alt="">
           </a>
@@ -81,7 +81,7 @@
       </div>
     </div>
   </div>
-</tpxplate>
+</template>
 <script>
   export default{
     data () {
@@ -105,8 +105,11 @@
 
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
-  .loagin
-    .header
+  @import "../../common/stylus/mixin.styl"
+  #center-page
+    height 100%
+    clearFix()
+    .center-header
       width 100%
       background url("./logobg.png") no-repeat
       background-size cover
@@ -114,7 +117,7 @@
         height 50px
         line-height 50px
         position relative
-        padding 0 1px
+        padding 0 12px
         .arrow
           display block
           width 22px
@@ -131,8 +134,8 @@
           color #fff
           font-size 16px
 
-      .mlogin
-        padding 1px 0 2px 0
+      .m-login
+        padding 12px 0 24px 0
         img
           display block
           margin auto
@@ -144,7 +147,7 @@
         ul
           width 100%
           display flex
-          li
+          .login_a
             float left
             text-align center
             height 44px
@@ -169,9 +172,12 @@
               margin auto
               display block
     .main
+      clearFix()
       width 100%
-      height 400px
-      .mformBox
+      height 100%
+      background #fff
+      .m-form-box
+        clearFix()
         position
         background #fff
         border-radius 0.5px
@@ -180,7 +186,9 @@
         #login_form
           width 100%
           color white
+
           ul
+            clearFix()
             li
               border-bottom #e2e2e2 solid 1px
               padding 12px 0 12px 30px
@@ -189,12 +197,72 @@
                 float left
                 display inline
                 width 17px
-              .nameico
+              .name-ico
                 height 21px
                 background url('./ico3.png') no-repeat
                 background-size contain
                 margin 1px 0 0 -25px
-              .passwordico
+              .password-ico
+                height 20px
+                margin 0 0 0 -25px
+                background url('./ico4.png') no-repeat
+                background-size contain
+              input
+                display block
+                height 21px
+                width 100%
+                font-size 15px
+                border none
+                padding 0
+                color #666
+                font-family "Microsoft Yahei",tahoma,arial
+                outline: none;
+                &.input-placeholder-color::-webkit-input-placeholder
+                  color #ccc
+        #new-login-form
+          clearFix()
+          width 100%
+          color white
+          ul
+            background-color white
+            li
+              border-bottom #e2e2e2 solid 1px
+              padding 12px 0 12px 30px
+              position relative
+              .get_phone-pass
+                background #fff
+                color #ff4259
+                border 1px solid #eb4c33
+                position absolute
+                right 0
+                top 6px
+                border-radius 3px
+                width 98px
+                height 20px
+                font-size 12px
+                line-height 20px
+                text-align center
+                padding 4px 0
+              .fr-sec-code
+                position absolute
+                top:6px
+                right 0
+                line-height 46px
+                img
+                  width 85px
+                  height 30px
+              .num-ico
+                float left
+                display inline
+                width 17px
+                height 17px
+                background url('./ico1.png') no-repeat
+                background-size contain
+                margin: 1px 0 0 -25px
+              .password-ico
+                float left
+                display block
+                width 17px
                 height 20px
                 margin 0 0 0 -25px
                 background url('./ico4.png') no-repeat
@@ -209,93 +277,53 @@
                 color #666
                 font-family "Microsoft Yahei",tahoma,arial
                 outline none
-        #newlogin_form
-          width 100%
-          color white
-          ul
-            background-color white
-            li
-              border-bottom #e2e2e2 solid 1px
-              padding 12px 0 12px 30px
-              position relative
-              .get_phonepass
-                background #fff
-                color #ff4259
-                border 1px solid #eb4c33
-                position absolute
-                right 0
-                top 0.5px
-                border-radius 3px
-                width 100px
-                text-align center
-                padding 0.3px 0
-              .seccode
-                position absolute
-                top:0
-                right 0
-                line-height 46px
-              .numico
-                float left
-                display inline
-                width 17px
-                height 17px
-                background url('./ico1.png') no-repeat
-                background-size contain
-                margin: 1px 0 0 -25px
-              .passwordico
-                float left
-                display inline
-                width 17px
-                height 20p
-                margin 0 0 0 -25px
-                background url('./ico4.png') no-repeat
-                background-size contain
-              input
-                display block
-                height 21px
-                width 100%
-                font-size 15px
-                border none
-                padding 0
-                color #666
-                font-family "Microsoft Yahei",tahoma,arial
-                outline none
-
+                &.input-placeholder-color::-webkit-input-placeholder
+                  color #ccc
 
       .ftc
-        padding 0 2px
+        clearFix()
+        padding 12px 24px
         a
           display block
+          height 20px
           font-size 14px
+          line-height 20px
+          color #898989
           float right
 
-      .loginbtn
+
+      .login-btn
         text-align center
-        padding-top 0.5px
+        padding-top 6px
+        height 38px
+        width 100%
         a
           display block
           letter-spacing 5px
-          margin 0 4%
+          margin 0 15px
           border-radius 5px
           background #2ec975
           font-size 15px
-          padding 6px 0
+          padding 9px 0
           text-align center
           color #fff
       .space
         width 100%
-        height 20%
+        height 100px
       .partners
-        text-align center
-        font-size 16px
-        color #d7d7d7
-        margin-top 0.5px
-
+        height 20px
+        width 100%
+        margin-top 8px
+        p
+          text-align center
+          font-size 16px
+          color #d7d7d7
+          line-height 20px
       .other_login
         width 100%
-        padding 1.5px 0
+        padding 18px 0
         display flex
-        div
+        .zfb-btn,.qq-btn
           width 0
           flex 1
           text-align center

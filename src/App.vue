@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="footerTool">
+    <div class="footerTool" >
       <ul>
         <li class="home-page active"><router-link to="/home"><a href="#"></a></router-link></li>
         <li class="classification"><router-link to="/classification"><a href="#"></a></router-link></li>
@@ -15,6 +15,7 @@
 <script>
 
   export default {
+
 //    el: '.footerTool',
     data () {
       return {
@@ -27,7 +28,9 @@
       }
     },
     components: {
+
     }
+
   }
 </script>
 
@@ -39,7 +42,7 @@
    list-style none
   a
     text-decoration none
-  body
+  html,body
     font-size 0
     width 100%
     height 100%

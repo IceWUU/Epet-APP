@@ -2,8 +2,16 @@
   <div class="classification-msg">
     <div class="head-class">
       <ul>
-        <li><router-link to="/classification/goods"><span class="head-class-goods active" @click="isred(item)">分类</span></router-link></li>
-        <li><router-link to="/classification/brand"><span class="head-class-brand">品牌</span></router-link></li>
+        <li :class="active" @click="isLeft(true)" ref="listLeft">
+          <router-link to="/classification/goods">
+            <span class="head-class-goods" >分类</span>
+          </router-link>
+        </li>
+        <li @click="isLeft(false)" ref="listRight">
+          <router-link to="/classification/brand">
+            <span class="head-class-brand">品牌</span>
+          </router-link>
+        </li>
       </ul>
       <div class="classification-search">
         <img src="./search.png" alt="" class="img-search">
@@ -19,15 +27,24 @@
   export default {
     data() {
       return {
-        item: true
+        active: 'active'
       }
     },
-
+    mounted(){
+      this.$store.dispatch('getGoods')
+    },
     computed: {},
 
     methods: {
-      isred () {
-        this.item = !this.item
+      //控制tab颜色
+      isLeft(left){
+        if (left){
+          this.$refs.listLeft.className="active"
+          this.$refs.listRight.className=" "
+        }else{
+          this.$refs.listLeft.className=" "
+          this.$refs.listRight.className="active"
+        }
       }
     },
     components: {
@@ -48,6 +65,7 @@
     height 100%
     .head-class
       position relative
+      background #fff
       ul
         height 39px
         padding 0 15px
@@ -69,7 +87,8 @@
             margin-right 17px
             text-align center
             color #333
-            &.active
+          &.active
+            .head-class-goods,.head-class-brand
               border-bottom 2px solid #ed4044
               color #ed4044
           .head-class-brand

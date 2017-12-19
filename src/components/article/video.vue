@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="video-page">
     <div class="video">
       <img src="https://img1.epetbar.com/2017-12/14/15/94de9a1a616ed0aa647be3f133d85f78.jpg@!500w0h" alt="">
     </div>
@@ -23,18 +23,19 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .video
-    img
-      width 100%
-    height 210px
-  .foot
-    height 38px
-    padding 10px
-    p
-      height 19px
-      font-size 12px
-      color #333
-      text-align center
-      &:last-child
-        color #999
+  .video-page
+    .video
+      img
+        width 100%
+      height 210px
+    .foot
+      height 38px
+      padding 10px
+      p
+        height 19px
+        font-size 12px
+        color #333
+        text-align center
+        &:last-child
+          color #999
 </style>
