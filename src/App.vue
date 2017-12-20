@@ -2,10 +2,10 @@
   <div>
     <div class="footerTool" >
       <ul>
-        <li class="home-page active"><router-link to="/home"><a href="#"></a></router-link></li>
-        <li class="classification"><router-link to="/classification"><a href="#"></a></router-link></li>
-        <li class="shopping-cart"><router-link to="/shopping"><a href="#"></a></router-link></li>
-        <li class="center"><router-link to="/center"><a href="#"></a></router-link></li>
+        <li id="home-page" :class="activePink" @click="isActive('1')" ref="listOne"><router-link to="/home"><a href="#"><div></div></a></router-link></li>
+        <li id="classification" @click="isActive('2')" ref="listTwo"><router-link to="/classification"><a href="#"><div></div></a></router-link></li>
+        <li id="shopping-cart" @click="isActive('3')" ref="listThree"><router-link to="/shopping"><a href="#"><div></div></a></router-link></li>
+        <li id="center" @click="isActive('4')" ref="listFour"><router-link to="/center"><a href="#"><div></div></a></router-link></li>
       </ul>
     </div>
     <router-view></router-view>
@@ -19,12 +19,33 @@
 //    el: '.footerTool',
     data () {
       return {
-        isActive: false
+        activePink: 'activePink'
       }
     },
     methods: {
-      ssss () {
-        this.isActive = !this.isActive
+      //控制tab颜色
+      isActive(xxx){
+        if (xxx==='1'){
+          this.$refs.listOne.className="activePink"
+          this.$refs.listTwo.className=" "
+          this.$refs.listThree.className=" "
+          this.$refs.listFour.className=" "
+        }else if (xxx==='2'){
+          this.$refs.listOne.className=" "
+          this.$refs.listTwo.className="activePink"
+          this.$refs.listThree.className=" "
+          this.$refs.listFour.className=" "
+        } else if (xxx==='3'){
+          this.$refs.listOne.className=" "
+          this.$refs.listTwo.className=" "
+          this.$refs.listThree.className="activePink"
+          this.$refs.listFour.className=" "
+        } else {
+          this.$refs.listOne.className=" "
+          this.$refs.listTwo.className=" "
+          this.$refs.listThree.className=" "
+          this.$refs.listFour.className="activePink"
+        }
       }
     },
     components: {
@@ -68,41 +89,51 @@
         height 100%
         text-align center
         line-height 45px
+
         a
           display block
-          background url(./img/img.png) no-repeat
-          background-size 234px 163px
-          height 40px
-          width 42px
-          margin 0 auto
-          margin-top 2px
+          height 100%
+          width 100%
+          div
+            width 42px
+            height 40px
+            margin 2px auto 0
+            background url(./img/img.png) no-repeat
+            background-size 234px 163px
+        &#home-page
+          a
+            div
+              background-position -85px 0
+        &#classification
+          a
+            div
+              background-position -85px -41px
+        &#shopping-cart
+          a
+            div
+              background-position -85px -81px
+        &#center
+          a
+            div
+              background-position -85px -122px
 
-        &.home-page
+
+        &#home-page.activePink
           a
-            background-position -85px 0
-        &.classification
+            div
+              background-position -42px 0
+        &#classification.activePink
           a
-            background-position -85px -41px
-        &.shopping-cart
+            div
+              background-position -42px -41px
+        &#shopping-cart.activePink
           a
-            background-position -85px -81px
-        &.center
+            div
+              background-position -42px -81px
+        &#center.activePink
           a
-            background-position -85px -122px
-/*
-        &.active.home-page
-          a
-            background-position -42px 0
-        &.active.classification
-          a
-            background-position -42px -41px
-        &.active.shopping-cart
-          a
-            background-position -42px -81px
-        &.active.center
-          a
-            background-position -42px -122px
-*/
+            div
+              background-position -42px -122px
 
 
 

@@ -1,330 +1,20 @@
 <template>
   <div class="nav-brand" ref="list">
     <ul class="brand-name">
-      <li class="brand-name-list">
-        <p class="list-name">—— 推荐品牌 ——</p>
+      <li class="brand-name-list" v-for="(goods, index) in classifyName.brand">
+        <p class="list-name">—— {{goods.title}} ——</p>
         <ul class="brand-img">
-          <li>
+          <li v-for="(good) in goods.list">
             <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
+              <img :src="good.logo">
             </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
+            <p class="sign-name">{{good.name}}</p>
+            <p class="country">{{good.address}}</p>
           </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
-            </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
-            </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
+
         </ul>
       </li>
-      <li class="brand-name-list">
-        <p class="list-name">—— 推荐品牌 ——</p>
-        <ul class="brand-img">
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
-            </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-        </ul>
-      </li>
-      <li class="brand-name-list">
-        <p class="list-name">—— 推荐品牌 ——</p>
-        <ul class="brand-img">
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
-            </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
-            </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
-            </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-        </ul>
-      </li>
-      <li class="brand-name-list">
-        <p class="list-name">—— 推荐品牌 ——</p>
-        <ul class="brand-img">
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
-            </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-        </ul>
-      </li>
-      <li class="brand-name-list">
-        <p class="list-name">—— 推荐品牌 ——</p>
-        <ul class="brand-img">
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
-            </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
-            </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
-            </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-        </ul>
-      </li>
-      <li class="brand-name-list">
-        <p class="list-name">—— 推荐品牌 ——</p>
-        <ul class="brand-img">
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2016-09/28/10/3b236d1731bd91004bffcec3515e1a0a.jpg" alt="">
-            </div>
-            <p class="sign-name">光能</p>
-            <p class="country">美国</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2017-08/09/20/64ac5fd97740cb0fab0cfe3eac1d27f7.jpg" alt="">
-            </div>
-            <p class="sign-name">Asda sfdas</p>
-            <p class="country">新西兰</p>
-          </li>
-          <li>
-            <div class="logo-img">
-              <img src="https://img2.epetbar.com/nowater/brand_logo/2013-01/28/87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
-            </div>
-            <p class="sign-name">渴望</p>
-            <p class="country">加拿大</p>
-          </li>
-        </ul>
-      </li>
+
     </ul>
     <div class="brand-all" @click="clickShow">全部</div>
     <div class="all-brand-page" v-show="toShow">
@@ -336,6 +26,7 @@
 <script>
   import toolHead from '../shopping/tool-head.vue'
   import BScroll from 'better-scroll'
+  import {mapState} from 'vuex'
   export default {
     data() {
       return {
@@ -343,7 +34,9 @@
       }
     },
 
-    computed: {},
+    computed: {
+      ...mapState(['classifyName'])
+    },
 
     methods: {
       clickShow() {

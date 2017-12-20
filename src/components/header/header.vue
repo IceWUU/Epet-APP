@@ -25,7 +25,7 @@
       </ul>
     </div>
     <div class="header-msg" v-show="isShow" @click="isShowMsg">
-      <pet-toolHead></pet-toolHead>
+      <pet-toolHead/>
     </div>
   </div>
 </template>

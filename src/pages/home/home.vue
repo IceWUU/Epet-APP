@@ -14,18 +14,20 @@
           <p class="prompt">您即将进入<span>猫猫站</span></p>
           <p class="b-line b-line2">▁</p>
           <ul class="switch">
-            <li>
+            <li @click="changeIndex('dog')">
               <img src="//static.epetbar.com/static_web/wap/src/images/change-dog.png" alt="">
               <div class="switch-name">狗狗站</div>
+              <a href="#" class="click-btn" v-show="false">立即进入</a>
             </li>
-            <li>
+            <li @click="changeIndex('cat')">
               <img src="//static.epetbar.com/static_web/wap/src/images/change-cat1.png" alt="">
               <div class="switch-name">猫猫站</div>
               <a href="#" class="click-btn">立即进入</a>
             </li>
-            <li>
+            <li @click="changeIndex('aquarium')">
               <img src="//static.epetbar.com/static_web/wap/src/images/change-fish.png" alt="">
               <div class="switch-name">水族站</div>
+              <a href="#" class="click-btn" v-show="false">立即进入</a>
             </li>
           </ul>
         </div>
@@ -63,8 +65,6 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixin.styl"
-
-
   .app
     position relative
     .bomb
@@ -73,11 +73,9 @@
       bottom 15%
       width 45px
       height 45px
-
       .bombImg
         width 100%
         height 100%
-
     .bomb-box
       position fixed
       top 0
@@ -86,9 +84,9 @@
       z-index 99
       background rgba(255,255,255,1)
       &.fade-enter-active, &.fade-leave-active
-        transition opacity .5s
+        transition transform  .8s
       &.fade-enter, &.fade-leave-to
-        opacity 0
+        transform scale(0,0)
       .main
         position absolute
         top 0
@@ -123,6 +121,11 @@
           line-height 32px
         .b-line2
           margin-top 20px
+
+
+
+
+
         .switch
           clearFix()
           margin-top 35px
@@ -142,6 +145,16 @@
               margin-top 5px
               height 19px
               line-height 19px
+            .click-btn
+              display inline-block
+              width 48px
+              height 19px
+              border-radius 30px
+              padding 3px 15px
+              margin-top 25px
+              font-size 12px
+              background #e74186
+              color #fff
             &:nth-child(2)
               margin-top 0
               width 135px
@@ -154,16 +167,6 @@
                 height 22px
                 line-height 22px
                 color #e74186
-            .click-btn
-              display inline-block
-              width 48px
-              height 19px
-              border-radius 30px
-              padding 3px 15px
-              margin-top 25px
-              font-size 12px
-              background #e74186
-              color #fff
 
 
       .close
