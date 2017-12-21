@@ -15,22 +15,18 @@
     </div>
     <div class="nav" ref="nav">
       <ul>
-        <li><a href="#">首页</a></li>
-        <li><a href="#">猫猫主粮</a></li>
-        <li><a href="#">罐头超市</a></li>
-        <li><a href="#">医疗保健</a></li>
-        <li><a href="#">猫砂</a></li>
-        <li><a href="#">零食玩具</a></li>
-        <li><a href="#">美容香波</a></li>
+        <li v-for="(nav,index) in home.menus"><a href="#">{{nav.menu_name}}</a></li>
       </ul>
     </div>
     <div class="header-msg" v-show="isShow" @click="isShowMsg">
       <pet-toolHead/>
     </div>
+    {{home}}
   </div>
 </template>
 
 <script>
+
   import toolHead from '../../pages/shopping/tool-head.vue'
   import BScroll from 'better-scroll'
   export default {
@@ -39,9 +35,17 @@
         isShow: false
       }
     },
+    props:{
+      home: Object
+    },
+    computed: {
+
+    },
+
     mounted(){
       new BScroll(this.$refs.nav, {
-        scrollX: true
+        scrollX: true,
+        click: true
       })
     },
     methods: {
@@ -63,7 +67,6 @@
     top 0
     z-index 9
     width 100%
-    /*height 87px*/
     .search
       width 100%
       height 41px
@@ -113,22 +116,15 @@
             height 100%
     .nav
       clearFix()
-      float left
-      width 100%
       height 36px
-      white-space: nowrap
-      overflow hidden
-      text-overflow ellipsis
       background #fff
       ul
-        width 125%
-        height 100%
+        width 520px
         li
-          display inline-block
+          float left
           text-align center
           height 36px
           width 74px
-          /*&:first-child*/
           &:nth-child(1)
             a
               color #e73f85
@@ -141,8 +137,6 @@
             line-height 36px
             font-size 14px
             color #666
-
-
     .header-msg
       position absolute
       top 0

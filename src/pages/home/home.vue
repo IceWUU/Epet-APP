@@ -1,7 +1,7 @@
 <template>
-  <div class="app">
-    <pet-header/>
-    <pet-article/>
+  <div class="app" v-if="home">
+    <pet-header :home="home"/>
+    <pet-article :home="home"/>
     <div class="bomb" @click="toggleShow">
       <img class="bombImg"  src="./go-cat.gif" alt="">
     </div>
@@ -43,7 +43,7 @@
 
   import header from '../../components/header/header.vue'
   import article from '../../components/article/article.vue'
-
+  import {mapState} from 'vuex'
   export default {
     data () {
       return {
@@ -54,6 +54,9 @@
       toggleShow () {
         this.isShow = !this.isShow
       }
+    },
+    computed: {
+      ...mapState(['home'])
     },
     components: {
       'pet-header': header,

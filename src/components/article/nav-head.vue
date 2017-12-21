@@ -19,6 +19,7 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .nav-head-page
+    background #fff
     height 70px
     padding 10px 0 5px 0
     .logo

@@ -1,4 +1,5 @@
 export default {
-  classifyName: {}
+  classifyName: {},
+  home: {}
 
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="mallPictures">
     <div class="discountOne">
-      <img src="https://img2.epetbar.com/nowater/2017-12/14/21/370311d69fd1a39fedca2774dc25ad97.jpg@!water" alt="">
+      <img src="https://img2.epetbar.com/nowater/2017-12/14/21/370311d69fd1a39fedca2774dc25ad97.jpg@!water">
     </div>
     <pet-line></pet-line>
     <div class="overseas">
@@ -35,7 +35,7 @@
     <pet-line></pet-line>
     <!--体验馆-->
     <pet-nav-head></pet-nav-head>
-    <pet-carousel></pet-carousel>
+    <pet-carousel :home="home"></pet-carousel>
     <pet-line></pet-line>
     <!--萌宠说-->
     <pet-nav-head></pet-nav-head>
@@ -69,7 +69,9 @@
     data() {
       return {}
     },
-
+    props:{
+      home: Object
+    },
     computed: {},
 
     methods: {},

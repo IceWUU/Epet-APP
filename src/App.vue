@@ -2,10 +2,10 @@
   <div>
     <div class="footerTool" >
       <ul>
-        <li id="home-page" :class="activePink" @click="isActive('1')" ref="listOne"><router-link to="/home"><a href="#"><div></div></a></router-link></li>
-        <li id="classification" @click="isActive('2')" ref="listTwo"><router-link to="/classification"><a href="#"><div></div></a></router-link></li>
-        <li id="shopping-cart" @click="isActive('3')" ref="listThree"><router-link to="/shopping"><a href="#"><div></div></a></router-link></li>
-        <li id="center" @click="isActive('4')" ref="listFour"><router-link to="/center"><a href="#"><div></div></a></router-link></li>
+        <li id="home-page" :class="activePink" @click="isActive('1')" ref="listOne"><router-link to="/home"><div></div></router-link></li>
+        <li id="classification" @click="isActive('2')" ref="listTwo"><router-link to="/classification"><div></div></router-link></li>
+        <li id="shopping-cart" @click="isActive('3')" ref="listThree"><router-link to="/shopping"><div></div></router-link></li>
+        <li id="center" @click="isActive('4')" ref="listFour"><router-link to="/center"><div></div></router-link></li>
       </ul>
     </div>
     <router-view></router-view>
@@ -21,6 +21,9 @@
       return {
         activePink: 'activePink'
       }
+    },
+    mounted () {
+      this.$store.dispatch('getHome')
     },
     methods: {
       //控制tab颜色
@@ -89,51 +92,37 @@
         height 100%
         text-align center
         line-height 45px
-
-        a
-          display block
-          height 100%
-          width 100%
-          div
-            width 42px
-            height 40px
-            margin 2px auto 0
-            background url(./img/img.png) no-repeat
-            background-size 234px 163px
+        div
+          width 42px
+          height 40px
+          margin 2px auto 0
+          background url(./img/img.png) no-repeat
+          background-size 234px 163px
         &#home-page
-          a
-            div
-              background-position -85px 0
+          div
+            background-position -85px 0
         &#classification
-          a
-            div
-              background-position -85px -41px
+          div
+            background-position -85px -41px
         &#shopping-cart
-          a
-            div
-              background-position -85px -81px
+          div
+            background-position -85px -81px
         &#center
-          a
-            div
-              background-position -85px -122px
-
+          div
+            background-position -85px -122px
 
         &#home-page.activePink
-          a
-            div
-              background-position -42px 0
+          div
+            background-position -42px 0
         &#classification.activePink
-          a
-            div
-              background-position -42px -41px
+          div
+            background-position -42px -41px
         &#shopping-cart.activePink
-          a
-            div
-              background-position -42px -81px
+          div
+            background-position -42px -81px
         &#center.activePink
-          a
-            div
-              background-position -42px -122px
+          div
+            background-position -42px -122px
 
 
 

@@ -161,6 +161,7 @@
           &.greyBg
             background #f3f4f5
     .nav-msg
+      overflow hidden
       position absolute
       right 0
       top 5px

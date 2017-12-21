@@ -1,12 +1,11 @@
 <template>
-  <div class="article">
-    <pet-carousel></pet-carousel>
-    <pet-navigation></pet-navigation>
-    <pet-line></pet-line>
-    <pet-special></pet-special>
-    <pet-line></pet-line>
-    <pet-mallPictures></pet-mallPictures>
-
+  <div class="article" v-if="home">
+    <pet-carousel :home="home"/>
+    <pet-navigation :home="home"/>
+    <pet-line/>
+    <pet-special/>
+    <pet-line/>
+    <pet-mallPictures :home="home"/>
   </div>
 </template>
 
@@ -21,6 +20,9 @@
   export default {
     data() {
       return {}
+    },
+    props:{
+      home: Object
     },
 
     computed: {},
