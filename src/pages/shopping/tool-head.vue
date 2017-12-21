@@ -1,7 +1,7 @@
 <template>
   <div class="tool-head">
     <div class="tool-head-box">
-      <div class="tool-return" @click()="clickShow"></div>
+      <div class="tool-return"></div>
       <span class="tool-title">购物车</span>
       <div class="tool-tool" @click="showTool"></div>
     </div>
